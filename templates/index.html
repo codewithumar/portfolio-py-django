@@ -87,7 +87,11 @@
                 </div>
                 <div class="column right">
                     <div class="text">I'm Umar and I'm a <span class="typing-2"></span></div>
-                    <p>Technically advanced, solution-oriented, and analytic with a solid academic background and hands-on expertise Android application development, Android application frameworks, and Android SDK, I am an Android Application Developer.Able to quickly collect and translate complicated requirements into workable solutions. Developed a thorough understanding of object-oriented design patterns and architecture, the software development life cycle, and programming approaches.</p>
+                    {% if user.is_authenticated %}
+                    {% for i  in info %}
+                    <p>{{i.info}}</p>
+                    {%endfor%}
+                    {% endif %}
                     
                 </div>
             </div>
@@ -101,6 +105,7 @@
         <div class="max-width">
             <h2 class="title">My services</h2>
             <div class="serv-content">
+                {% if user.is_authenticated %}
                 {% for con in context %}
                 <div class="card">
                     <div class="box">
@@ -110,6 +115,7 @@
                     </div>
                 </div>
                 {% endfor %}
+                {% endif%}
                 
                </div>
             </div>
@@ -124,7 +130,11 @@
             <div class="skills-content">
                 <div class="column left">
                     <div class="text">My creative skills & experiences.</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ratione error est recusandae consequatur, iusto illum deleniti quidem impedit, quos quaerat quis minima sequi. Cupiditate recusandae laudantium esse, harum animi aspernatur quisquam et delectus ipsum quam alias quaerat? Quasi hic quidem illum. Ad delectus natus aut hic explicabo minus quod.</p>
+                    {% if user.is_authenticated %}
+                    {% for i  in info %}
+                    <p>{{i.info}}</p>
+                    {%endfor%}
+                    {% endif%}
                     <a href="#">Read more</a>
                 </div>
                 <div class="column right">

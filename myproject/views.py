@@ -1,13 +1,14 @@
 from django.shortcuts import render ,redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
-from myproject.models import Services
+from myproject.models import *
 
 # Create your views here.
 
 def index(request):
     con=Services.objects.all()
-    return render(request,'index.html',{'context':con})
+    info=Information.objects.all()
+    return render(request,'index.html',{'context':con,'info':info})
 
 def register(request):
     if request.method=='POST':
@@ -45,3 +46,5 @@ def logout(request):
     return redirect('/')
 
 
+def post(request,pk):
+    return render(request,'post.html', {'pk':pk})
