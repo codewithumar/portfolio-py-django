@@ -15,3 +15,17 @@
 7. Each project can have many app we can crwate another app by using in root directory.   "python manage.py startapp myproject"
 
 8. Run django project:     "python manage.py runserver"
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'myproject',
+        'USER':'postgres',
+        'PASSWORD':';/.,m',
+        'HOST':'localhost'
+    }
+}
+
+ALLOWED_HOSTS = [
+    '34.201.22.224:8000'
+]
